@@ -1,0 +1,96 @@
+#include<ESP8266WiFi.h>
+int pinLed1 = 1;
+int pinLed2 = 2;
+int pinLed3 = 3;
+int pinLed4 = 4;
+int pinLed5 = 5;
+int pinLed6 = 6;
+int buttonPin = 8;
+int buttonState;
+int ran;
+int i = 50;
+int time = 2000;
+
+void setup ()
+{
+  pinMode (pinLed1, OUTPUT);
+  pinMode (pinLed2, OUTPUT);
+  pinMode (pinLed3, OUTPUT);
+  pinMode (pinLed4, OUTPUT);
+  pinMode (pinLed5, OUTPUT);
+  pinMode (pinLed6, OUTPUT);
+  pinMode (buttonPin, INPUT);
+  
+}
+
+void loop()
+{
+  buttonState = digitalRead(buttonPin);
+  if (buttonState == HIGH){
+    digitalWrite(pinLed1,HIGH);
+  delay(i);
+  digitalWrite(pinLed1,LOW);
+  digitalWrite(pinLed2,HIGH);
+  delay(i);
+  digitalWrite(pinLed2,LOW);
+  digitalWrite(pinLed3,HIGH);
+  delay(i);
+  digitalWrite(pinLed3,LOW);
+  digitalWrite(pinLed4,HIGH);
+  delay(i);
+  digitalWrite(pinLed4,LOW);
+  digitalWrite(pinLed5,HIGH);
+  delay(i);
+  digitalWrite(pinLed5,LOW);
+  digitalWrite(pinLed6,HIGH);
+  delay(i);
+  digitalWrite(pinLed6,LOW);
+  delay(400);
+    ran = random(1, 7);
+    if (ran == 1){
+      digitalWrite (pinLed1, HIGH);
+      digitalWrite (pinLed2, HIGH);
+      digitalWrite (pinLed3, HIGH);
+      digitalWrite (pinLed4, HIGH);
+      digitalWrite (pinLed5, HIGH);
+      digitalWrite (pinLed6, HIGH);
+      delay (time);
+    }
+    if (ran == 2){
+      digitalWrite (pinLed2, HIGH);
+      digitalWrite (pinLed3, HIGH);
+      digitalWrite (pinLed4, HIGH);
+      digitalWrite (pinLed5, HIGH);     
+      delay (time);
+    }
+    if (ran == 3){
+      digitalWrite (pinLed1, HIGH);
+      digitalWrite (pinLed2, HIGH);
+      digitalWrite (pinLed4, HIGH);
+      digitalWrite (pinLed5, HIGH);
+      digitalWrite (pinLed6, HIGH);
+      delay (time);
+    }
+    if (ran == 4){
+      digitalWrite (pinLed2, HIGH);
+      digitalWrite (pinLed3, HIGH);
+      digitalWrite (pinLed6, HIGH);
+      delay (time);
+    }
+    if (ran == 5){
+      digitalWrite (pinLed3, HIGH);
+      delay (time);
+   }
+   if (ran == 6){
+      digitalWrite (pinLed5, HIGH);
+      digitalWrite (pinLed6, HIGH);
+      delay (time);
+   }
+  }
+  digitalWrite (pinLed1, LOW);
+  digitalWrite (pinLed2, LOW);
+  digitalWrite (pinLed3, LOW);
+  digitalWrite (pinLed4, LOW);
+  digitalWrite (pinLed5, LOW);
+  digitalWrite (pinLed6, LOW);
+}
