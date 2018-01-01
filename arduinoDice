@@ -1,4 +1,3 @@
-#include<ESP8266WiFi.h>
 int pinLed1 = 1;
 int pinLed2 = 2;
 int pinLed3 = 3;
